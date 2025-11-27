@@ -1,4 +1,5 @@
 # A Python module containing a data-loader function to parse snapshot files and extract time, particle count, and structured arrays for further analysis.
+
 import numpy as np
 import astropy.units as u
 
