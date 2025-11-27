@@ -1,5 +1,7 @@
 Hours Worked: 17:00 MST- 
 Created this repository and added the first commit "README.md"
 Installed Anaconda on system; troubleshot installation issues. 
-Identified and selected datasets for the astronomy pipeline:.tar files containing snapshots of MW, M31 and M33. The tar files are too big to be uploaded on this repository without affecting functionality and thus will stay on my system. 
-Updates README for the repository; added information about how the folders are organized. 
+Identified and selected datasets: `.tar` files containing snapshots of MW, M31, and M33.  
+Noted that the files are large and not to be included in this repository to maintain functionality, but are to be stored locally instead for use in the pipeline.  
+Identified that each snapshot in the datasets contains particle type, mass (1e10 solar masses), positions (x, y, z in kpc), and velocities (vx, vy, vz in km/s).
+Updated README for the repository; added information about how the folders are organized. 
