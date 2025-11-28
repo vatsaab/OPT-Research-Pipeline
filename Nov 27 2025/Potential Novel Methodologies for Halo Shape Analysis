@@ -1,0 +1,33 @@
+MW + M31 Halo Shape Analysis – Feasible Novel Methodologies
+
+Objective:
+The goal is to develop and investigate novel approaches to quantify the three-dimensional shape of the merged Milky Way (MW) and Andromeda (M31) dark matter halo and its evolution over time. While standard methods such as the inertia tensor will be investigated, this project aims to explore alternative methodologies that may provide additional insight into halo structure, asymmetry, and substructure. 
+
+Potential Feasible Approaches:
+
+1. Convex Hull Analysis
+   - Compute the convex hull of the particle distribution.
+   - Use the hull volume and principal axes to estimate halo elongation and flattening.
+   - Advantage: sensitive to global shape while remaining computationally simple.
+
+2. Alpha Shape / Concave Hull Analysis
+   - Generalizes the convex hull to capture cavities and concavities in the halo.
+   - Can quantify irregularities and non-ellipsoidal features.
+   - Advantage: retains shape detail not captured by standard ellipsoidal fits.
+
+3. Radial Moment Ratios
+   - Compute higher-order moments (beyond second order) of the particle positions within concentric shells.
+   - Metrics such as skewness and kurtosis indicate asymmetries and deviations from idealized ellipsoids.
+   - Advantage: captures inner vs. outer halo differences and local distortions.
+
+4. Distance Matrix Eigenvalue Spectra
+   - Construct a matrix of pairwise distances between particles.
+   - Analyze eigenvalues to extract elongation, flattening, and global anisotropy.
+   - Advantage: purely geometric, does not assume ellipsoidal symmetry.
+
+5. Iterative Shell-Based Ellipsoid Estimation
+   - Start with an initial guess of the halo shape in a shell or region.
+   - Recompute axes iteratively based on particle distribution until convergence.
+   - Advantage: reduces bias from substructure and outer particles, feasible for snapshot data.
+
+The approaches may complement or improve upon standard inertia tensor techniques by revealing asymmetries, radial variation, and non-ellipsoidal features.
