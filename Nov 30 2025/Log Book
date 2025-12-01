@@ -1,1 +1,5 @@
-
+Hours worked: 3 hours
+Ran into catastrophic issues with Anaconda, debugged conda packages. 
+Reinstalled Windows on my system and installed Anaconda Navigator. Pushed a screenshot of the Anaconda Navigator to this folder up and running as proof of successful installation.
+Created the Jupyter Notebook "HaloShape.py" and pushed it to the repository. 
+Ran the code in "HaloShape.py" for the merger snapshot and found my first result for the pipeline: determining the shape of the dark matter halo in the merger snapshots for M31 and MW. I found that the halo has a spherical shape. 
