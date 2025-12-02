@@ -1,5 +1,6 @@
 Hours Worked: 4.5 hours
-Moved all .tar files into the same directory. 
-Implemented and tested functions to compute the moment of inertia tensor and 3D halo axis ratios. Ran into errors documented in the Jupyter notebook "HaloShapeEvolution" that need debugging. 
-Extended the code to loop through multiple MW and M31 snapshots to track the time evolution of global halo axis ratios.
+Extended the pipeline to loop through multiple MW and M31 snapshots to track the time evolution of global halo axis ratios.
 Implemented plotting features into the code. 
+Moved all .tar files into the same directory on my system. 
+Ran into errors documented in the Jupyter notebook "HaloShapeEvolution" that need debugging. Added a list of errors encountered in the file "Errors Encountered" within this folder. 
+(A decent chunk of the time was spent troubleshooting the parsing of the .tar files. The errors are unresolved as of yet.) 
