@@ -1,1 +1,4 @@
-
+Hours Worked: 4.5 hours
+Implemented and tested functions to compute the moment of inertia tensor and 3D halo axis ratios. 
+Extended the code to loop through multiple MW and M31 snapshots to track the time evolution of global halo axis ratios.
+Implemented plotting features into the code. 
