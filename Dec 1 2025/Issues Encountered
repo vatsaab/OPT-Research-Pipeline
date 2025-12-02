@@ -1,0 +1,4 @@
+Parsing through the .tar files in my D drive seems to create an issue. 
+Using the os module of python, I navigated to the folder containing the .tar files, but my code is failing to recognize snapshots MW_445.txt and M31_445.txt.
+Those files are present in the relevant directory, so this might require some additional troubleshooting. Without being able to parse through the files, the code will not generate any plots. 
+The files are too huge to be moved to my system's internal memory while maintaining adqueate functionality. 
