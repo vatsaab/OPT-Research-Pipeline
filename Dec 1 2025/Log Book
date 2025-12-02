@@ -1,4 +1,5 @@
 Hours Worked: 4.5 hours
-Implemented and tested functions to compute the moment of inertia tensor and 3D halo axis ratios. 
+Moved all Tar files into the same directory. 
+Implemented and tested functions to compute the moment of inertia tensor and 3D halo axis ratios. Ran into errors documented in the Jupyter notebook "HaloShapeEvolution" that need debugging. 
 Extended the code to loop through multiple MW and M31 snapshots to track the time evolution of global halo axis ratios.
 Implemented plotting features into the code. 
