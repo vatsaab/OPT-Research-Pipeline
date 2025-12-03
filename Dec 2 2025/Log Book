@@ -1,1 +1,6 @@
-
+Hours Worked: 2 hours
+Troublshot and fixed errors associated with the pipeline. 
+Processed 701 snapshots simulating the MW-M31 merger.
+Generated a plot showing the evolution of axis ratios across those snapshots.
+Generated a plot documenting the radial variation of halo shape.
+Uploaded the Jupyter notebook "HaloShapeEvolution" containing the corrected pipeline and the plots to the deliverables as well as this folder. 
