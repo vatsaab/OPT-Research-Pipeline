@@ -1,6 +1,6 @@
 Hours Worked: 4 hours
 
-Code and uploaded HaloDensityProfile.py to this folder.
+Code and uploaded HaloDensityProfiles.py to this folder.
 Density Profile Methods Implementation:-
 Implemented full suite of five independent halo-density estimation methods for combined MW+M31 simulations:
 KDE / SPH-like smoothing using Gaussian kernels with mass-weighted contributions.
