@@ -1,1 +1,20 @@
+Hours Worked: 4 hours
 
+Code and uploaded HaloDensityProfile.py to this folder.
+Density Profile Methods Implementation:-
+Implemented full suite of five independent halo-density estimation methods for combined MW+M31 simulations:
+KDE / SPH-like smoothing using Gaussian kernels with mass-weighted contributions.
+Nearest-neighbor density estimator using adaptive volumes based on the 32nd nearest particle.
+Adaptive octree mesh with recursive spatial subdivision, mass-per-cell estimates, and radial binning.
+Delaunay tessellation density estimation via tetrahedral volumes and centroid binning.
+Enclosed-mass differential density using cumulative mass profile and shell differentiation.
+
+Coded and uploaded HaloDensityEvolution2.py to this folder. 
+Time-Evolution Density Pipeline Implementation:-
+Pipeline now:
+Reads MW and M31 files for each index.
+Computes center-of-mass shift, concatenates halos, and processes particle data.
+Computes KDE, NN, Octree, Delaunay, and Enclosed-Mass densities for each snapshot.
+Stores results in time×radius matrices for all methods.
+Generates evolution heatmaps showing log-density as a function of snapshot and radius.
+Added robust fallback handling for missing snapshots, Delaunay failures, and edge-case bins.
