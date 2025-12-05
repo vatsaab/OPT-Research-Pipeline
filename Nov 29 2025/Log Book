@@ -1,3 +1,4 @@
 Hours Worked: 3 hours
 Wrote and pushed the HaloShape script for calculating the inertia tensor and quantifying the shape of the dark matter halo to this folder as well as to the "deliverables" folder. 
 Selected merger snapshot as snapshot 445 and implemented that in the code. 
+Dec 4 2025: Renamed the folder to Nov 29 2025 to maintain consistent formatting with the rest of the repo.
