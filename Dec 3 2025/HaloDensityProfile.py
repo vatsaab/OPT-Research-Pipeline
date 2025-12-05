@@ -1,3 +1,4 @@
+# Halo Density Profile for the merger snapshot 
 import numpy as np
 import matplotlib.pyplot as plt
 from ReadFile import Read
