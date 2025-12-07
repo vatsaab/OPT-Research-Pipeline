@@ -1,6 +1,5 @@
 Hours worked: 4 hours
 Task: Galaxy Density Profile Analysis
-File created: DensityPlots.ipynb
 
 Summary:
 Fixed syntax errors in the density profile code and added snapshot processing progress printing.
