@@ -1,1 +1,36 @@
+Hours worked: 4 hours
+Task: Galaxy Density Profile Analysis
+File created: DensityPlots.ipynb
 
+Summary:
+Fixed syntax errors in the density profile code and added snapshot processing progress printing.
+
+Ran the full radial density computation for MW and M31 snapshots (0–600) using multiple methods: Enclosed Mass, KDE, Nearest-Neighbor, Octree, and Delaunay tessellation.
+
+The code was executed in a Jupyter notebook named DensityPlots.py.
+
+Total runtime was approximately 3 hours for all 601 snapshots.
+
+Generated heatmap plots of density evolution for each method, showing radial density changes across snapshots.
+
+All plots were saved and included in the notebook.
+
+Files Created / Updated:
+
+DensityPlots.py → contains the full code and generated plots.
+
+Output images saved: density_methods_evolution_heatmaps.png.
+
+Observations / Notes:
+
+Snapshot processing averaged ~10–15 seconds per snapshot.
+
+Octree and Delaunay methods were the most time-consuming steps.
+
+The notebook has been uploaded to the folder containing this logbook.
+
+Next Steps:
+
+Consider optimizing Octree/Delaunay computations for faster runtime.
+
+Analyze generated density evolution plots to identify trends in MW-M31 system.
