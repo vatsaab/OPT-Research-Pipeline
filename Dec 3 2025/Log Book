@@ -1,1 +1,63 @@
+Hours Worked: 3 hours
 
+Tasks: Halo Density Analysis of MW + M31
+
+Files / Code Written:
+
+HaloDensityEvolution.py
+
+Prepared code to compute radial density profiles for MW+M31 snapshots from 100 to 800.
+
+Uses a shell-based method to calculate densities in logarithmic radial bins.
+
+Includes progress printing to track snapshot processing.
+
+Intended output: heatmap of density evolution (plotting code included but not executed).
+
+HaloDensityProfile.py
+
+Prepared code to calculate the density profile for a single snapshot (445).
+
+Comparison with analytic profiles: Hernquist, NFW, and Isothermal.
+
+Plotting code included but plots not generated yet.
+
+HaloDifferentialDensity.py
+
+Prepared code to compute differential density profile using the enclosed mass method for snapshot 445.
+
+Includes calculation of cumulative mass, radial differences, and corresponding density.
+
+Plotting code included but plots not generated yet.
+
+Execution / Runtime Notes:
+
+Code written to handle multiple snapshots and single-snapshot analysis.
+
+Estimated runtime for full multi-snapshot execution (100–800) with plotting: several hours, likely ~3 hours if executed sequentially for all snapshots.
+
+Code includes progress tracking for easier monitoring once executed.
+
+Observations / Notes:
+
+Code now prepared for full density analysis of MW+M31 halo.
+
+Ready for plotting and analysis once executed.
+
+Differential and analytic profile comparisons will allow verification of halo structure.
+
+Next Steps:
+
+Execute the scripts to generate heatmaps and density profile plots.
+
+Verify correctness of density calculations and compare with analytic models.
+
+Optimize runtime for multi-snapshot analysis if needed.
+
+Files Prepared / Added to Folder:
+
+HaloDensityEvolution.py
+
+HaloDensityProfile.py
+
+HaloDifferentialDensity.py
