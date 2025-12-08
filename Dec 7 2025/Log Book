@@ -1,1 +1,16 @@
+Hours worked: 3 hours
+Work Summary:
+Created a new Python module, MergerKinematics.py, which will compute kinematic properties of the MW/M31 major merger remnant using the extracted snapshot files. The script currently includes the full pipeline for loading snapshots, combining halo particles, centering positions and velocities, and computing the intended kinematic diagnostics (e.g., radial & tangential velocity dispersions, rotation curves, angular momentum, anisotropy parameter β, and enclosed-mass–based escape velocities).
 
+Code has not been executed or validated yet; this step will occur after directory verification and ensuring all snapshot files are correctly read by the pipeline. This completes the structural setup phase, and the next session will focus on debugging, running the analysis, and generating plots.
+
+Files created:
+MergerKinematics.py
+
+Next Steps:
+
+Run the script on several test snapshots (e.g., 100, 300, 445, 600) to validate the COM centering and velocity calculations.
+
+Add plotting functions and time-evolution visualizations.
+
+Begin comparison against literature values once initial outputs look stable.
