@@ -1,1 +1,35 @@
+Hours Worked: 5 hours
 
+Tasks Completed:
+
+Developed and refined a Python pipeline to analyze kinematic properties of the combined MW+M31 halo across snapshots 000–800.
+
+Implemented COM-centering for both positions and velocities using the CenterOfMass2 module to ensure measurements are in the halo frame.
+
+Computed tangential rotation velocities in spherical coordinates, allowing construction of the radial rotation curve for each snapshot.
+
+Calculated specific angular momentum vectors and derived the Bullock spin parameter λ’ for the halo at each timestep.
+
+Estimated escape speed profiles from the enclosed mass of the halo as a function of radius.
+
+Added progress tracking with print statements for number of snapshots processed.
+
+Ran the pipeline on all snapshots; processing took ~3100 seconds (~52 minutes).
+
+Files Generated:
+
+Notebook: HaloKinematics.ipynb
+
+Plots saved as PNGs:
+
+rotation_curve_matrix.png – Radial rotation velocity profile evolution across snapshots.
+
+halo_spin_parameter.png – Evolution of the specific angular momentum and spin parameter.
+
+escape_speed_profile.png – Escape speed as a function of radius for each snapshot.
+
+Additional Notes:
+
+The notebook includes well-commented code for reproducibility and clarity.
+
+All plots were pushed to the repository, ensuring updated results are available for review.
