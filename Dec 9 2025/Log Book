@@ -1,1 +1,27 @@
+Hours time: 4 hours
 
+Tasks accomplished:
+
+Developed a Python script to compute the radial velocity dispersion profile of the combined Milky Way + M31 dark matter halo across all snapshots (000–801).
+
+Implemented a velocity_dispersion_profile function to calculate σ(r) in logarithmic radial bins.
+
+Integrated snapshot iteration with COM-centering and concatenation of MW and M31 particle positions and velocities.
+
+Added a running counter to track the number of snapshots processed.
+
+Outcome:
+
+Successfully executed the code, processed all 802 snapshots.
+
+Generated a heatmap showing the evolution of velocity dispersion as a function of radius and time.
+
+Total runtime: 2600 seconds (~43 minutes).
+
+File generated: VelocityDispersion.ipynb
+
+Next Steps:
+
+Compare velocity dispersion profiles to analytical estimators (e.g., Virial theorem, Wolf Mass estimator).
+
+Incorporate error analysis and potential kernel smoothing for continuous profiles.
