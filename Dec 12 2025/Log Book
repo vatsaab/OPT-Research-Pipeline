@@ -1,1 +1,21 @@
+Hours Worked - 8 hours
+Time Spent:
+- Code writing: 30 minutes
+- Execution: 27,000 seconds (7.5 hours)
+- Total: 8 hours
 
+Task:
+Attempted to compute kinetic energy, gravitational potential energy, and virial ratio 2K/|U| for the combined MW–M31 halo system across ~800 simulation snapshots.
+
+Work Done:
+- Wrote analysis code to read MW and M31 particle data, combine halos, shift to the MW center-of-mass frame, and compute energies.
+- Implemented direct particle–particle gravitational potential energy using an O(N^2) double sum and stored results for each snapshot.
+
+Result:
+- Snapshot 0 completed successfully.
+- The notebook failed on snapshot 1 after ~7.5 hours of runtime with an OSError: [Errno 22] Invalid argument, likely due to the computationally infeasible O(N^2) approach combined with long-running execution in Jupyter.
+
+File generated: VirialRatioAttempt.ipynb
+
+Next Step:
+- Redesign the potential energy calculation using a computationally tractable approximation.
