@@ -1,1 +1,39 @@
+Hours Worked - 4 hours
+Task: Compute kinetic and potential energies for MW+M31 snapshots using an approximate O(n log n) method
+Time Spent: 4 hours (including code development and execution for one snapshot)
+Objectives:
+- Modify existing energy computation code to avoid O(n^2) scaling for potential energy.
+- Implement a Barnes–Hut-like approximation using scipy.spatial.cKDTree.
+- Add a progress tracker to monitor potential energy computation.
+- Test the modified code on a single snapshot.
 
+Actions Taken:
+- Imported required libraries (numpy, matplotlib, scipy.spatial.cKDTree) and custom modules (ReadFile, CenterOfMass2).
+- Implemented kinetic_energy function (unchanged).
+- Replaced original double-loop potential energy computation with potential_energy_barnes_hut:
+  * Uses cKDTree to query particle distances efficiently.
+  * Computes pairwise gravitational potential energy while skipping self-interactions and already counted pairs.
+  * Includes a progress tracker showing percent completion.
+- Adjusted main loop to call the new potential energy function.
+- Added progress messages for snapshot processing and potential energy computation.
+- Ran code on one snapshot to verify correctness and functionality.
+
+Observations/Results:
+- Code ran successfully, producing kinetic energy, potential energy, and virial ratio for a snapshot.
+- Progress tracker provides live feedback during computation.
+- Total elapsed time (scripting + running snapshot) was ~4 hours.
+- Approximation works correctly but is still computationally heavy for full snapshot sets.
+
+Challenges:
+- Even with O(n log n) scaling, runtime remains long due to high particle count.
+- Processing all 802 snapshots sequentially would be impractical without further optimization.
+
+Next Steps / Recommendations:
+- Implement parallelized Barnes–Hut or particle-mesh (PM) method to reduce runtime.
+- Consider subsampling particles for approximate virial ratio trends across snapshots.
+- Explore dynamic progress bars with estimated remaining time for long computations.
+- Log and visualize results for single snapshot before scaling up to full dataset.
+
+Notes:
+- Current code is a working prototype with progress tracking.
+- Full analysis of all snapshots will require either HPC resources or additional algorithmic improvements.
