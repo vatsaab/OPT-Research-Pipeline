@@ -1,7 +1,7 @@
-Hours Worked - 8 hours
+Hours Worked: 8 hours
 Time Spent:
-- Code writing: 30 minutes
-- Execution: 27,000 seconds (7.5 hours)
+- Code writing: 0.5 hours
+- Execution and monitoring: 7.5 hours
 - Total: 8 hours
 
 Task:
@@ -9,13 +9,14 @@ Attempted to compute kinetic energy, gravitational potential energy, and virial 
 
 Work Done:
 - Wrote analysis code to read MW and M31 particle data, combine halos, shift to the MW center-of-mass frame, and compute energies.
-- Implemented direct particle–particle gravitational potential energy using an O(N^2) double sum and stored results for each snapshot.
+- Implemented direct particle–particle gravitational potential energy using an O(N^2) double sum, storing results for each snapshot.
+- Actively monitored code execution to check for errors, ensuring proper simulation behavior.
 
 Result:
 - Snapshot 0 completed successfully.
-- The notebook failed on snapshot 1 after ~7.5 hours of runtime with an OSError: [Errno 22] Invalid argument, likely due to the computationally infeasible O(N^2) approach combined with long-running execution in Jupyter.
+- Notebook failed on snapshot 1 after ~7.5 hours of runtime due to an OSError ([Errno 22] Invalid argument), likely caused by the computationally infeasible O(N^2) approach in Jupyter.
 
 File generated: VirialRatioAttempt.ipynb
 
 Next Step:
-- Redesign the potential energy calculation using a computationally tractable approximation.
+- Redesign the potential energy calculation using a computationally tractable approximation (e.g., Barnes–Hut or particle-mesh method) to process all snapshots efficiently.
