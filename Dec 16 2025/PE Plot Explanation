@@ -1,0 +1,24 @@
+File: potential_energy_progress_snapshot_explanation.txt
+
+Graph Explanation – Potential Energy Progression (MW+M31 Merger Snapshot)
+
+Work Context:
+- Total hours worked: 8 hours (including code development, debugging, compilation, and monitoring long-running simulations).
+- Code incrementally computes the gravitational potential energy of ~50,000 particles in the merger snapshot.
+- Debugging and compilation took significant time due to O(N^2) interactions and memory management, requiring active supervision.
+
+Graph:
+- X-axis: Number of particles processed.
+- Y-axis: Absolute cumulative gravitational potential energy |U| (in 1e10 Msun, kpc, Myr units).
+
+Astrophysical Insights:
+1. **Early steep rise**: The initial rapid increase in |U| reflects that the most massive or closely interacting particles contribute disproportionately to the total gravitational potential energy. These are likely the central regions of the MW and M31 halos, where particle densities are highest.
+2. **Gradual leveling**: As additional particles are processed, the incremental contribution to |U| decreases, reflecting that outer halo particles contribute smaller potential energy changes due to larger separations and lower densities.
+3. **Convergence**: The leveling of the curve indicates that the majority of significant gravitational interactions have been captured. This convergence is essential for accurately estimating global properties such as the virial ratio or total binding energy of the system.
+4. **Merger dynamics reflection**: The cumulative energy trend also encodes information about the merger stage. For instance, the shape of the curve may hint at overlapping halos, tidal interactions, or early dynamical friction effects as the MW and M31 halos begin to interact gravitationally.
+5. **Potential energy as a diagnostic tool**: By tracking cumulative |U|, we can identify whether numerical approximations or particle subsampling may miss critical contributions from dense regions, ensuring robust estimates of halo binding energy during the merger.
+
+Conclusion:
+- The graph provides both a computational diagnostic and a window into the astrophysical structure of the MW+M31 merger snapshot.
+- It demonstrates that central, dense regions dominate gravitational binding, while outer halo particles contribute incrementally, consistent with hierarchical halo assembly.
+- This cumulative potential energy visualization will be crucial when comparing multiple snapshots to study energy evolution and virialization during the merger.
