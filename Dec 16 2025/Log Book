@@ -1,1 +1,25 @@
+Hours Worked: 8 hours 
+Hours include the time spent doing code development, debugging, compilation, and monitoring the long-running simulation.
+
+Tasks Completed:
+- Developed Python code to compute the gravitational potential energy of the MW+M31 halo merger snapshot.
+- Implemented a cumulative potential energy calculation using cKDTree for efficiency.
+- Added progress tracking to monitor how many particles were processed in real time.
+- Ran the simulation for one merger snapshot (~50,000 particles) and generated a cumulative potential energy graph.
+- Monitored code execution and ensured correctness of all calculations.
+
+Files Generated:
+- Notebook: PotentialEnergyMergerSnapshot.ipynb
+- Plot: potential_energy_progress_snapshot.png
+
+Description of Work:
+- The code computes the gravitational potential energy incrementally for all particles.
+- Progressively accumulates potential energy contributions from particle pairs.
+- The code prints updates to show the percentage of particles processed to ensure active monitoring.
+
+Graph Generated:
+- The plot shows the cumulative absolute potential energy (|U|) as a function of the number of particles processed.
+- The curve increases and gradually levels off as more particles are included, indicating convergence toward the total potential energy of the snapshot.
+- Initial contributions are small, but the cumulative energy rises steadily, showing how the merger’s gravitational interactions build up as more particles are considered.
+- This graph is useful for verifying convergence and understanding the energy distribution during the merger snapshot.
 
