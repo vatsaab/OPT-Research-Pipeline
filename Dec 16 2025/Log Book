@@ -7,15 +7,18 @@ Tasks Completed:
 - Added progress tracking to monitor how many particles were processed in real time.
 - Ran the simulation for one merger snapshot (~50,000 particles) and generated a cumulative potential energy graph.
 - Monitored code execution and ensured correctness of all calculations.
+- Wrote an explanation of the plot generated.
 
 Files Generated:
 - Notebook: PotentialEnergyMergerSnapshot.ipynb
 - Plot: potential_energy_progress_snapshot.png
+- Text File: PEPlotExplanation
 
 Description of Work:
 - The code computes the gravitational potential energy incrementally for all particles.
 - Progressively accumulates potential energy contributions from particle pairs.
 - The code prints updates to show the percentage of particles processed to ensure active monitoring.
+- The text file interprets the PE graph generated and delivers astrophysical insights about the merger snapshot.
 
 Graph Generated:
 - The plot shows the cumulative absolute potential energy (|U|) as a function of the number of particles processed.
