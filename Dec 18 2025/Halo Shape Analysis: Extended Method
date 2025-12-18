@@ -1,0 +1,140 @@
+Halo Shape Analysis of the MW–M31 Merger: Standard and Extended Methodology
+
+============================================================
+
+---
+
+1. Scientific Context and Motivation
+
+Quantifying the three-dimensional shape of dark matter halos is a standard diagnostic in studies of galaxy formation and mergers. Axis ratios derived from inertia tensors are widely used to characterize halo triaxiality and its evolution. However, during major mergers, such as the interaction between the Milky Way (MW) and Andromeda (M31), the halo is neither relaxed nor well approximated by a single ellipsoid.
+
+The methodology presented here therefore consists of two parts:
+
+1. A standard, mass-weighted inertia-tensor analysis that provides continuity with existing literature.
+2. A complementary, purely geometric analysis based on the convex hull of the particle distribution, designed to capture non-ellipsoidal structure and merger-driven distortions.
+
+---
+
+2. Original Method: Mass-Weighted Inertia Tensor Analysis
+
+2.1 Particle Selection and Reference Frame
+
+For each simulation snapshot, dark matter particles belonging to the MW and M31 systems are read separately and then combined into a single particle set. Positions and masses are concatenated, and the system is centered using the Milky Way center of mass. All subsequent shape measurements are performed in this centered frame.
+
+This procedure ensures that the inferred halo shape is not contaminated by bulk translation and that time evolution reflects intrinsic structural changes rather than coordinate artifacts.
+
+---
+
+2.2 Inertia Tensor Definition
+
+The original code computes the unreduced inertia tensor
+
+I_ij = Σ_k m_k (r_k² δ_ij − x_{k,i} x_{k,j}),
+
+where m_k and x_k are the mass and position of particle k relative to the center of mass. This definition is standard in numerical studies of halo shape.
+
+Key properties of this tensor are:
+
+* It is explicitly mass-weighted.
+* Contributions scale with r², giving increased weight to particles at large radius.
+* It implicitly assumes that the halo can be meaningfully approximated by a single triaxial ellipsoid.
+
+---
+
+2.3 Axis Ratio Extraction
+
+The inertia tensor is diagonalized, yielding three eigenvalues λ₁ ≥ λ₂ ≥ λ₃. The halo shape is summarized using the dimensionless axis ratios
+
+b/a = √(λ₂ / λ₁),
+
+c/a = √(λ₃ / λ₁).
+
+These quantities are computed for each snapshot and stored as time series, providing a standard measure of the global, mass-weighted evolution of halo triaxiality.
+
+---
+
+2.4 Physical Interpretation and Limitations
+
+The inertia-tensor axis ratios primarily reflect the distribution of mass within the halo. They are well suited for describing relaxed systems and for comparison with previous studies. However, during a major merger they are limited in several respects:
+
+* They average over substructure and tidal features.
+* They cannot distinguish between a geometrically extended halo and a compact halo with extended debris.
+* They enforce an ellipsoidal description even when the particle distribution is strongly non-ellipsoidal.
+
+These limitations motivate the introduction of an additional, geometry-based diagnostic.
+
+---
+
+3. Extended Method: Convex Hull–Based Geometric Analysis
+
+3.1 Rationale
+
+To capture merger-driven distortions that are not well described by ellipsoidal models, the extended analysis treats the dark matter distribution as a three-dimensional point cloud and characterizes its global geometry directly. This is accomplished using the convex hull of the particle positions.
+
+The convex hull is defined as the smallest convex volume that encloses all particles. Its construction makes no assumptions about symmetry or equilibrium and does not depend on particle masses.
+
+---
+
+3.2 Convex Hull Construction
+
+For each snapshot, the convex hull of the centered particle positions is computed. The resulting hull defines:
+
+* A set of hull vertices that trace the outer boundary of the halo.
+* A well-defined geometric volume enclosing the entire particle distribution.
+
+This procedure is sensitive to tidal debris, bridges, and asymmetries that arise naturally during the MW–M31 merger.
+
+---
+
+3.3 Hull-Based Axis Ratios
+
+To quantify the shape of the halo envelope, the covariance matrix of the hull vertices is computed and diagonalized. The resulting eigenvalues characterize the geometric extent of the halo along its principal axes.
+
+Axis ratios are defined analogously to the inertia-tensor case:
+
+b/a = √(μ₂ / μ₁),
+
+c/a = √(μ₃ / μ₁),
+
+where μ₁ ≥ μ₂ ≥ μ₃ are the eigenvalues of the hull-vertex covariance matrix.
+
+These ratios describe the geometry of the halo’s outer boundary rather than its mass distribution.
+
+---
+
+3.4 Convex Hull Volume
+
+The convex hull volume is recorded for each snapshot. This quantity provides a direct measure of the geometric size of the halo and its evolution through the merger.
+
+Increases in hull volume can arise from tidal heating and debris without corresponding increases in bound mass, making this metric particularly useful during the merger phase.
+
+---
+
+3.5 Volume Inflation Factor
+
+To connect the geometric and mass-based descriptions, an effective ellipsoidal volume is constructed from the inertia-tensor eigenvalues. The ratio
+
+V_hull / V_ellipsoid
+
+serves as a dimensionless measure of geometric irregularity.
+
+Values near unity indicate that the halo is well approximated by an ellipsoid, while larger values indicate strong deviations associated with merger-driven structure.
+
+---
+
+4. Comparison of the Two Approaches
+
+The inertia-tensor and convex-hull methods probe complementary aspects of halo structure:
+
+* The inertia tensor traces mass-weighted relaxation and triaxiality.
+* The convex hull traces the geometric extent and irregularity of the halo.
+
+By applying both methods to the same snapshots, it is possible to distinguish between genuine shape relaxation and apparent shape changes driven by transient tidal features.
+
+---
+
+5. Summary
+
+The original inertia-tensor analysis provides a standard, literature-consistent measure of halo shape evolution. The extended convex-hull analysis adds a complementary geometric perspective that is essential during the highly non-linear MW–M31 merger phase.
+
+Together, these methods yield a more complete and physically transparent characterization of dark matter halo morphology than either approach alone.
