@@ -1,1 +1,87 @@
+Project: MW–M31 Dark Matter Halo Shape Analysis
+
+Duration: 8 hours (code development and documentation, creating the research write ups)
+
+---
+
+Summary of Work
+
+Today’s work focused on extending the existing halo shape analysis pipeline beyond standard inertia-tensor methods. The objective was to retain literature-standard practice while introducing a novel, defensible methodology capable of capturing non-ellipsoidal structure during the MW–M31 merger.
+
+Three deliverables were produced:
+
+1. HaloShapeExtended.py
+2. Novel halo shape methodology.pdf
+3. Halo Shape Analysis: Extended Method.tex
+
+---
+
+Baseline Method Review
+
+The starting point was the previously implemented mass-weighted inertia tensor analysis. This method computes global axis ratios (b/a, c/a) for the combined MW–M31 dark matter distribution as a function of snapshot number. It provides a standard, mass-based description of halo triaxiality and serves as a reference point for comparison with existing literature.
+
+Before extending the pipeline, the logic, assumptions, and limitations of the inertia-tensor approach were carefully reviewed, particularly its reliance on an ellipsoidal approximation and its reduced sensitivity to tidal debris during major mergers.
+
+---
+
+Methodological Extension
+
+The primary technical development today was the implementation of a convex hull–based geometric analysis. This approach treats the halo as a three-dimensional point cloud and characterizes its outer morphology without assuming symmetry, equilibrium, or ellipsoidal structure.
+
+The extended analysis includes:
+
+* Construction of the 3D convex hull of the particle distribution for each snapshot
+* Measurement of the convex hull volume as a function of time
+* Extraction of geometric axis ratios from the covariance of hull vertices
+* Definition of a volume inflation factor comparing hull volume to an inertia-derived ellipsoidal volume
+
+These quantities are designed to be directly comparable to inertia-tensor results while probing complementary physical information.
+
+---
+
+Code Development
+
+A complete, standalone analysis script (HaloShapeExtended.py) was written. The script:
+
+* Preserves the original inertia-tensor calculations
+* Adds convex hull geometry using the same centered particle positions
+* Processes all 801 simulation snapshots
+* Produces time-series plots comparing mass-based and geometry-based shape diagnostics
+
+Care was taken to keep the implementation modular and transparent so that the new methodology can be evaluated independently or removed without affecting the baseline analysis.
+
+---
+
+Documentation and Write-Up
+
+A full methodology write-up was produced in LaTeX (Halo Shape Analysis: Extended Method.tex) and compiled into a PDF (Novel halo shape methodology.pdf). The write-up:
+
+* Defines every technical term used in the analysis
+* Justifies each methodological choice and its necessity
+* Explains both the standard inertia-tensor approach and the extended convex-hull method
+* Is structured to meet journal-level standards for a Methods section
+
+The documentation is intended to be directly reusable in a manuscript or thesis without substantial revision.
+
+---
+
+Scientific Outcome
+
+By the end of the session, the project now includes both:
+
+* A literature-consistent mass-weighted halo shape diagnostic
+* A novel, purely geometric diagnostic sensitive to merger-driven irregularities
+
+Together, these tools provide a more complete and physically interpretable description of dark matter halo morphology during the MW–M31 merger than either method alone.
+
+---
+
+Next Steps
+
+Planned follow-up work includes:
+
+* Testing the code by running it on all the simualted snapshots available; documenting the results generated. 
+* Validation of convex hull sensitivity to outliers and particle resolution
+* Optional extension to concave (alpha-shape) analyses
+* Integration of results into the broader merger evolution narrative
 
