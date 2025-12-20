@@ -1,0 +1,61 @@
+Angular Information Entropy Halo Diagnostic
+Code Description and Methodological Overview
+
+Overview
+
+This code implements a novel, information-theoretic method for analyzing the structure and dynamical state of dark matter halos in numerical simulations. The method is designed to complement standard mass-based diagnostics (such as density profiles, inertia tensors, and tessellation methods) by quantifying the angular organization of mass rather than its spatial density.
+
+Instead of estimating density directly, the code measures the Shannon entropy of the angular mass distribution on concentric spherical shells. This approach captures anisotropy, substructure, and merger-driven distortions without assuming equilibrium, ellipsoidal symmetry, or smoothness of the halo.
+
+The method is particularly well suited for studying major mergers, where halos are far from relaxed and standard shape estimators can become ambiguous or misleading.
+
+Scientific Motivation
+
+In a relaxed, spherical dark matter halo, particles at fixed radius are distributed nearly isotropically in angle. During mergers, tidal stripping, shell crossing, and incomplete phase mixing, this angular isotropy is broken. Coherent angular features such as streams, tidal bridges, lobes, and merger remnants naturally emerge.
+
+Traditional density estimators quantify how much mass exists in a region, but they are often insensitive to how that mass is directionally organized. The Angular Information Entropy diagnostic directly measures angular mixing and anisotropy, providing a complementary view of halo structure that is sensitive to dynamical state rather than just mass concentration.
+
+Method Summary
+
+For each simulation snapshot, the code performs the following steps:
+
+Particle Selection and Centering
+Dark matter particles associated with the Milky Way (MW) and Andromeda (M31) halos are loaded and combined into a single particle set. The system is recentered using the MW center of mass to remove bulk translational motion while preserving intrinsic merger asymmetries.
+
+Radial Shell Decomposition
+Particles are grouped into logarithmically spaced radial shells. Each shell is analyzed independently, allowing the method to capture radial variation in anisotropy between the inner halo and the outskirts.
+
+Angular Projection
+Particle positions are converted from Cartesian coordinates into spherical coordinates. The radial coordinate is used only to assign particles to shells, while angular coordinates are used to construct the entropy diagnostic.
+
+Angular Binning
+The unit sphere is discretized into fixed polar and azimuthal bins. Particle masses are accumulated into these angular bins, forming a mass-weighted angular distribution on each shell.
+
+Entropy Calculation
+The Shannon entropy of the angular mass distribution is computed. The entropy is normalized by the maximum possible entropy for the chosen angular binning, producing a dimensionless quantity between 0 and 1.
+
+Physical Interpretation
+
+A normalized angular entropy value close to 1 indicates a nearly isotropic angular distribution, consistent with a relaxed or well-mixed halo. Lower entropy values indicate increasing angular anisotropy due to triaxiality, tidal debris, streams, or merger-induced asymmetries.
+
+The temporal evolution of angular entropy traces key dynamical events such as pericenter passages, tidal disruption, and the gradual relaxation of the merger remnant.
+
+Because the entropy is normalized and mass-weighted, it is insensitive to the total mass in a shell and instead reflects the geometric and dynamical organization of matter.
+
+Key Properties of the Method
+
+- Does not assume ellipsoidal symmetry
+
+- Does not rely on kernel smoothing or density estimation
+
+- Sensitive to tidal features, streams, and incomplete phase mixing
+
+- Provides a single bounded diagnostic per radius and snapshot
+
+- Fully complementary to inertia tensor, convex hull, and density-based methods
+
+Output
+
+The code produces a two-dimensional time–radius map of normalized angular entropy, visualized as a heatmap across simulation snapshots. This output allows direct identification of merger-driven anisotropy, relaxation phases, and radial dependence of angular mixing.
+
+The resulting data products are suitable for correlation with other halo diagnostics such as axis ratios, convex hull volume, and merger stage indicators.
