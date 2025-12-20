@@ -1,0 +1,36 @@
+- Parameter Choices and Robustness Considerations
+
+The Angular Information Entropy diagnostic requires several numerical choices, most notably the angular resolution of the spherical discretization and the minimum particle count per radial shell. These parameters affect the balance between sensitivity to small-scale angular structure and statistical noise arising from finite particle sampling.
+
+The angular discretization is defined by a fixed number of polar and azimuthal bins. Increasing the number of angular bins improves sensitivity to narrow streams and localized tidal features, but increases shot noise in sparsely populated shells. Conversely, coarser angular binning suppresses noise but may artificially inflate entropy by averaging over coherent structure. In practice, the angular resolution must be chosen such that each shell contains sufficient particles to populate a representative fraction of angular bins.
+
+A minimum particle threshold is imposed for each radial shell to ensure robust entropy estimation. Below this threshold, entropy measurements become dominated by Poisson noise and are excluded from the analysis. Because the entropy is normalized by its maximum possible value, comparisons across shells and snapshots remain meaningful provided the angular resolution is held fixed.
+
+These parameters are not tuned to produce specific outcomes; rather, they are chosen to ensure numerical stability and interpretability. Sensitivity to angular resolution and particle threshold can be assessed by repeating the analysis with varied binning schemes, which is straightforward within the present framework.
+
+- Limitations and Failure Modes
+
+While the Angular Information Entropy diagnostic captures angular anisotropy and substructure, it is not sensitive to all forms of halo complexity. In particular, purely radial features that preserve angular isotropy, such as spherically symmetric shell crossings, do not reduce angular entropy and therefore remain undetected by this method.
+
+The diagnostic is also sensitive to finite sampling effects in low-density regions. In the outer halo, where particle counts per shell are low, entropy estimates may be biased upward due to incomplete angular coverage. This limitation is mitigated through the use of minimum particle thresholds and by interpreting entropy trends primarily in well-sampled regions.
+
+Because the angular discretization is fixed, the method implicitly assumes that relevant angular structure is resolved at the chosen bin scale. Extremely thin or transient features narrower than the angular bin size may be partially smeared. However, this limitation is shared by all discretized angular analyses and does not affect large-scale anisotropy or global merger signatures.
+
+Finally, the method measures angular organization rather than mass concentration. As such, it is complementary to density-based diagnostics rather than a replacement for them.
+
+- Relation to Existing Halo Diagnostics
+
+The Angular Information Entropy diagnostic probes a distinct aspect of halo structure compared to commonly used methods. Inertia-tensor axis ratios characterize the global mass-weighted shape under an implicit ellipsoidal assumption, while density estimators quantify the radial distribution of mass.
+
+Angular entropy, by contrast, measures the degree of angular mixing at fixed radius. During major mergers, these diagnostics need not evolve synchronously. For example, a halo may exhibit near-spherical inertia-tensor axis ratios while still retaining strong angular anisotropy due to tidal streams or bridges. Conversely, a triaxial but well-mixed halo may display reduced axis ratios while maintaining high angular entropy.
+
+By applying these diagnostics concurrently, it becomes possible to distinguish geometric elongation from dynamical mixing. Discrepancies between inertia-based shape measures and angular entropy provide a direct signature of non-equilibrium structure.
+
+- Computational Considerations
+
+The Angular Information Entropy diagnostic is computationally efficient. For a snapshot containing N particles, the dominant operations are coordinate transformation, angular binning, and histogram accumulation, each of which scales linearly with particle number.
+
+Because the analysis is performed independently for each radial shell and snapshot, the method is trivially parallelizable. No global matrix operations, tessellations, or nearest-neighbor searches are required, making the approach well suited for large snapshot sets and parameter studies.
+
+Memory usage is minimal, as the method does not require storing pairwise distances or auxiliary spatial structures.
+
