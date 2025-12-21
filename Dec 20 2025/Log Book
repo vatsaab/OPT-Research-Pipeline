@@ -1,0 +1,51 @@
+Hours Worked : 8.0 hours 
+
+Project: Novel Density–Entropy Diagnostics for Dark Matter Halo Structure
+
+Estimated Time Breakdown:
+
+Conceptual development of novel diagnostic: 2.0 h
+
+Algorithm design and implementation (Python): 2.5 h
+
+Mathematical formalization and methodological framing: 1.5 h
+
+Documentation and write-ups: 2.0 h
+
+Files Generated Today:
+
+DensityShannonEntropy.py
+
+DensityShannon.py Code Explanation.tex
+
+Novel Density Method Further Discussion.tex
+
+Novel_Diagnostic_for_Dark_Matter_Halo_Anisotropy.pdf
+
+Summary of Work Performed:
+
+Developed a novel, entropy-based diagnostic for characterizing anisotropy and structural complexity in dark matter halos during dynamical evolution. The method introduces a Shannon-entropy formulation applied to angular and radial density distributions, designed to capture information loss, symmetry breaking, and merger-driven disorder beyond traditional density profiles or inertia-tensor analyses.
+
+Implemented the full methodology in Python, including particle recentering, radial binning, angular density estimation, probability normalization, and entropy computation across simulation snapshots. The implementation was designed to be modular, extensible, and computationally scalable for large N-body datasets.
+
+Prepared a detailed LaTeX code explanation documenting every computational step, algorithmic choice, and numerical consideration to ensure transparency and reproducibility. Authored a separate technical discussion manuscript elaborating on the theoretical motivation, physical interpretation, limitations, and complementarity of the entropy diagnostic relative to standard halo shape and density measures.
+
+Compiled a methods-focused PDF suitable for dissemination, internal review, or submission as a numerical methodology paper. No results were generated or interpreted at this stage; the work is intentionally scoped as a diagnostic and methods development effort.
+
+Current Status:
+
+Methodology fully specified and implemented
+
+Documentation complete and publication-ready
+
+Code execution and validation deferred to future work
+
+Next Planned Steps:
+
+Run diagnostic on merger simulation snapshots
+
+Perform robustness and convergence tests
+
+Compare entropy evolution against traditional halo shape metrics
+
+Prepare results and discussion sections for journal submission
