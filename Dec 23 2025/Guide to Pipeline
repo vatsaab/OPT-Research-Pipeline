@@ -1,2 +1,217 @@
 The following python functions and libraries were implemented in the pipeline at different steps to execute the required tasks.
 This document is a guide for the reader who can use it to create a new or customize the existing pipeline to perform related tasks and/or further expand the methodology. 
+
+-----------------------------------------------
+MW–M31 Halo Shape Evolution Script Documentation
+-----------------------------------------------
+
+This document explains the libraries, Python functions, and custom functions used in the MW–M31 halo shape evolution script.
+
+1. Libraries
+
+1.1 NumPy (import numpy as np)
+    - Purpose: Numerical computations and array operations.
+    - Functions used:
+        - np.arange(start, stop): Creates arrays with regularly spaced values (used to define snapshots 1–801).
+        - np.zeros(shape): Initializes arrays of zeros for storing axis ratios and volumes.
+        - np.sum(array, axis): Computes sum along a given axis (used in inertia tensor computation).
+        - np.array([...]): Creates arrays from lists.
+        - np.vstack([...]).T: Stacks arrays vertically and transposes to form position matrices.
+        - np.linalg.eigvalsh(matrix): Computes eigenvalues of a symmetric matrix (inertia tensor and convex hull covariance).
+        - np.sort(array): Sorts eigenvalues ascending.
+        - Arithmetic operations (**2, *, /, etc.): Vectorized computations on arrays.
+
+1.2 Matplotlib (import matplotlib.pyplot as plt)
+    - Purpose: Data visualization and plotting.
+    - Functions used:
+        - plt.figure(figsize=(w,h)): Creates a figure.
+        - plt.plot(x, y, label=...): Plots lines with optional labels.
+        - plt.xlabel(), plt.ylabel(): Labels axes.
+        - plt.grid(): Adds grid lines.
+        - plt.legend(): Adds a legend.
+        - plt.tight_layout(): Adjusts layout.
+        - plt.savefig(filename, dpi=...): Saves figure to file.
+        - plt.show(): Displays figure.
+
+1.3 SciPy Spatial (from scipy.spatial import ConvexHull)
+    - Purpose: Computational geometry.
+    - Functions used:
+        - ConvexHull(points): Computes convex hull of points.
+        - hull.vertices: Indices of convex hull vertices.
+        - hull.volume: Volume enclosed by convex hull.
+
+1.4 Custom Module (from CenterOfMass2 import CenterOfMass)
+    - Purpose: Compute center of mass (COM) of particle distributions.
+    - Functions used:
+        - CenterOfMass(filename, particle_type): Loads particle data.
+        - .COMdefine(x, y, z, m): Computes center of mass coordinates.
+
+2. Custom Functions in the Script
+
+2.1 compute_inertia_tensor(positions, masses)
+    - Purpose: Computes unreduced inertia tensor.
+    - Method: 
+        I_ij = sum_k m_k (r_k^2 δ_ij - x_{k,i} x_{k,j})
+    - Returns: 3x3 NumPy array (inertia tensor).
+
+2.2 inertia_axis_ratios(I)
+    - Purpose: Converts inertia tensor eigenvalues to axis ratios.
+    - Method:
+        - eigvals = np.sort(np.linalg.eigvalsh(I))[::-1]
+        - b/a = sqrt(eigvals[1]/eigvals[0])
+        - c/a = sqrt(eigvals[2]/eigvals[0])
+    - Returns: b/a, c/a, eigenvalues.
+
+2.3 convex_hull_properties(positions)
+    - Purpose: Computes convex hull volume and geometric axis ratios.
+    - Method:
+        - hull = ConvexHull(positions)
+        - verts = positions[hull.vertices]
+        - cov = np.cov(verts.T)
+        - Compute eigenvalues of covariance → b/a, c/a
+    - Returns: hull volume, b/a, c/a.
+
+2.4 ellipsoid_volume_from_inertia(eigvals)
+    - Purpose: Computes ellipsoidal volume from inertia tensor eigenvalues.
+    - Method:
+        - a,b,c = sqrt(eigvals[0,1,2])
+        - Volume = 4/3 * pi * a * b * c
+    - Returns: Scalar volume.
+
+3. Python Functions and Constructs
+
+- for i, s in enumerate(snaps): Iterates snapshots with index and snapshot number.
+- f"MW_{s}.txt": f-string formatting for file names.
+- np.concatenate((array1, array2)): Combines arrays.
+- pos -= np.array([xcom, ycom, zcom]): Centers positions on MW COM.
+- print(f"..."): Formatted printing with numeric precision.
+
+4. Workflow Summary
+
+1. Generate snapshot numbers with np.arange(1, 802).
+2. Initialize arrays (np.zeros) to store results.
+3. Loop over snapshots:
+    a. Load particle data via CenterOfMass.
+    b. Compute positions relative to MW center.
+    c. Compute inertia tensor and axis ratios.
+    d. Compute convex hull properties and axis ratios.
+    e. Compute ellipsoid volume and volume inflation factor.
+    f. Print results.
+4. Plot results with Matplotlib:
+    - Axis ratios vs. snapshot
+    - Convex hull volume vs. snapshot
+    - Volume inflation factor vs. snapshot
+
+---------------------------------------------------------
+MW–M31 Halo Angular Entropy Analysis Script Documentation
+---------------------------------------------------------
+
+This document explains the libraries, Python functions, and custom functions used in the angular entropy analysis of the MW–M31 halo.
+
+1. Libraries
+
+1.1 NumPy (import numpy as np)
+    - Purpose: Numerical computations and array operations.
+    - Functions used:
+        - np.arange(start, stop): Creates arrays with regularly spaced values (used for snapshot numbers).
+        - np.logspace(start, stop, num): Creates logarithmically spaced arrays (used for radial bins).
+        - np.sqrt(array): Element-wise square root (used for mid-bin radii).
+        - np.full(shape, value): Initializes arrays with a specific value (here, NaN for angular entropy).
+        - np.linalg.norm(array, axis): Computes vector magnitudes (used for radial distance).
+        - np.concatenate((array1, array2)): Combines arrays into one.
+        - np.vstack([...]).T: Stacks arrays vertically and transposes to create position arrays.
+        - np.clip(array, min, max): Restricts values to a range (used in theta calculation).
+        - np.mod(array, value): Computes modulo (used to wrap phi into [0, 2π)).
+        - Arithmetic operations on arrays: vectorized calculations.
+        - np.sum(array): Sums elements (used for histogram totals).
+        - np.log(array): Natural logarithm (used in Shannon entropy calculation).
+
+1.2 Matplotlib (import matplotlib.pyplot as plt)
+    - Purpose: Visualization of angular entropy evolution.
+    - Functions used:
+        - plt.figure(figsize=(w,h)): Creates a new figure.
+        - plt.imshow(array, ...): Displays a 2D array as an image (used for entropy heatmap).
+        - plt.colorbar(im, label=...): Adds a colorbar.
+        - plt.ylabel(), plt.xlabel(), plt.title(): Axis labels and title.
+        - plt.tight_layout(): Adjusts layout.
+        - plt.savefig(filename, dpi=...): Saves the figure.
+        - plt.show(): Displays the figure.
+
+1.3 Custom Module (from CenterOfMass2 import CenterOfMass)
+    - Purpose: Computes center of mass of particle distributions.
+    - Functions used:
+        - CenterOfMass(filename, particle_type): Loads particle data.
+        - .COMdefine(x, y, z, m): Computes center of mass coordinates.
+
+1.4 Warnings Module (import warnings)
+    - Purpose: Manage runtime warnings.
+    - Function used:
+        - warnings.filterwarnings("ignore"): Suppresses warning messages.
+
+2. Configuration Parameters
+
+- start_snap, end_snap: Define snapshot range.
+- snaps = np.arange(start_snap, end_snap + 1): Array of snapshot numbers.
+- nsnaps = len(snaps): Number of snapshots.
+- r_bins = np.logspace(-1, 2.6, 40): Radial bin edges (logarithmic scale).
+- r_mid = np.sqrt(r_bins[:-1] * r_bins[1:]): Midpoints of radial bins.
+- n_theta, n_phi: Number of polar and azimuthal angular bins.
+- n_ang_bins = n_theta * n_phi: Total angular bins.
+- angular_entropy = np.full((nsnaps, nbins), np.nan): Array to store angular entropy values.
+
+3. Custom Functions
+
+3.1 spherical_angles(pos)
+    - Purpose: Converts Cartesian coordinates to spherical coordinates (r, theta, phi).
+    - Inputs:
+        - pos: (N,3) array of particle positions.
+    - Outputs:
+        - r: radial distances.
+        - theta: polar angles [0, π].
+        - phi: azimuthal angles [0, 2π).
+    - Notes: Only angular coordinates (theta, phi) are used for entropy; r is used for radial shell selection.
+
+3.2 angular_entropy_shell(theta, phi, masses)
+    - Purpose: Computes normalized Shannon entropy of the angular (theta, phi) distribution on a radial shell.
+    - Inputs:
+        - theta, phi: Angular coordinates of particles in shell.
+        - masses: Particle masses.
+    - Steps:
+        - Define angular bins: theta_bins and phi_bins.
+        - Compute mass-weighted histogram over angular bins.
+        - Normalize histogram to total mass.
+        - Compute probability distribution over non-empty bins.
+        - Compute Shannon entropy: S = -sum(p * log(p)).
+        - Normalize by maximum possible entropy: S_norm = S / log(n_ang_bins).
+    - Physical Meaning:
+        - S_norm ~ 1: isotropic angular distribution.
+        - S_norm < 1: anisotropy, substructure, or tidal features.
+
+4. Python Constructs and Functions
+
+- for i, s in enumerate(snaps): Loop over snapshots with index and snapshot number.
+- f"MW_{s:03d}.txt": Formatted string for file names.
+- try / except: Skip snapshots if files are missing.
+- np.concatenate(): Combine MW and M31 particle arrays.
+- pos -= np.array([xcom, ycom, zcom]): Recenter positions on MW COM.
+- boolean indexing: Select particles in radial shells.
+- np.digitize(): Assign angular coordinates to bins (used in angular_entropy_shell).
+- np.sum(): Compute total mass per shell.
+
+5. Workflow Summary
+
+1. Define snapshot range, radial bins, and angular discretization.
+2. Initialize angular_entropy array with NaN.
+3. Loop through snapshots:
+    a. Load MW and M31 particle data via CenterOfMass.
+    b. Combine particle positions and masses.
+    c. Recenter on MW COM.
+    d. Convert positions to spherical coordinates.
+    e. Loop over radial shells:
+        - Select particles in shell.
+        - Skip shell if particle count < 50.
+        - Compute normalized angular entropy.
+4. Visualize results:
+    - Use plt.imshow to create a heatmap of angular entropy vs radius and snapshot number.
+    - Add colorbar, labels, title.
+    - Save figure as PNG.
