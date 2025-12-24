@@ -1,1 +1,52 @@
+Hours Worked- 3 hours
+# MW–M31 Halo Analysis – 2025-12-23
 
+## Overview
+Today, I ran the MW–M31 halo analysis pipeline and documented the workflow. The goal was to analyze halo shape evolution and angular entropy across merger snapshots, and create a comprehensive guide for the pipeline.
+
+## Tasks Completed
+1. **Halo Shape Evolution Analysis**
+   - Computed:
+     - Mass-weighted inertia tensor axis ratios (b/a, c/a)
+     - Convex hull axis ratios (b/a, c/a)
+     - Convex hull volume
+     - Ellipsoidal volume from inertia eigenvalues
+     - Volume inflation factor (convex hull / ellipsoid)
+   - Generated plots:
+     - `halo_axis_ratio_comparison.png`
+     - `halo_hull_volume.png`
+     - `halo_volume_inflation.png`
+
+2. **Angular Entropy Analysis**
+   - Computed normalized angular Shannon entropy per radial shell for each snapshot.
+   - Radial bins: logarithmic from 0.1–~400 kpc (40 bins)
+   - Angular bins: n_theta = 12 (polar), n_phi = 24 (azimuthal)
+   - Generated heatmap:
+     - `angular_entropy_halo_evolution.png`
+
+3. **Documentation**
+   - Created `Guide to Pipeline.txt` containing:
+     - Detailed explanations of Python libraries used (NumPy, Matplotlib, SciPy ConvexHull, CenterOfMass2)
+     - Python functions and constructs (`np.arange`, `np.zeros`, `np.concatenate`, `f-strings`, etc.)
+     - Custom functions and their purposes
+     - Workflow summaries for both scripts
+     - Physical interpretation of outputs (axis ratios, volumes, angular entropy)
+
+## Notes
+- Convex hull analysis provides a mass-independent view of halo geometry.
+- Volume inflation factor highlights deviations from ellipsoidal symmetry.
+- Angular entropy tracks isotropy vs. anisotropy in particle distribution across radial shells.
+- The pipeline is now fully documented and reproducible for future analyses.
+
+## Files Generated Today
+- `halo_axis_ratio_comparison.png`
+- `halo_hull_volume.png`
+- `halo_volume_inflation.png`
+- `angular_entropy_halo_evolution.png`
+- `Guide to Pipeline.txt`
+- `Pipeline.ipynb`
+
+## Next Steps
+- Analyze correlations between convex hull irregularities and angular entropy.
+- Compare halo shape and entropy evolution across early vs. late merger snapshots.
+- Start writing a research note and work towards getting this pipeline and my results published. 
