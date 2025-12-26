@@ -1,1 +1,77 @@
+Merry Christmas! 🎄 Anyone reading this on December 25th—wishing you a joyful holiday!
+
+Hours Worked : 8.5 hours
+Date: 2025-12-25
+Researcher: Abhinav Vatsa
+Project: MW–M31 Merger Angular Entropy Analysis
+
+
+1. Objectives
+-----------------
+1. Identify a suitable journal for publishing angular entropy analysis of the MW–M31 merger halo.
+2. Generate a publication-ready draft including introduction, methodology, results, discussion, and conclusions.
+3. Ensure adherence to formal, passive-voice scientific writing standards consistent with RNAAS formatting.
+4. Produce LaTeX code ready for submission.
+5. Fully document and interpret simulation-based results from the angular entropy diagnostic.
+6. Maximize content within journal word limits while providing detailed physical interpretation.
+
+2. Work Completed
+-----------------
+Task: Journal selection & format identification
+Description: Researched relevant journals for galactic dynamics and merger studies. Shortlisted Research Notes of the AAS (RNAAS) based on scope, word limit (~1,500 words), and formatting style. Examined sample papers to understand figure placement, abstract style, and citation requirements.
+Time Spent: 0.5 hours
+
+Task: Initial Results Interpretation
+Description: Analyzed the angular entropy vs. time-radius plot. Identified key physical signatures including early-time anisotropy, V-shaped entropy minima during tidal events, radial propagation of angular structure, and late-time isotropization. Noted differences from inertia-tensor analyses and other shape diagnostics.
+Time Spent: 1.5 hours
+
+Task: Drafting Publication-ready Text (Text Mode)
+Description: Composed a detailed narrative of results, including clear explanation of methodology, angular entropy calculation, shell and angular binning, and physical interpretation. Drafted both a descriptive version and a structured Results/Interpretation subsection suitable for RNAAS submission.
+Time Spent: 1.5 hours
+
+Task: Passive Voice Formalization
+Description: Rewrote drafts to remove first-person references, converted statements into passive voice, ensured professional scientific tone, and checked for clarity and conciseness.
+Time Spent: 0.75 hours
+
+Task: LaTeX Document Creation
+Description: Generated fully structured LaTeX manuscript including: title, author block, abstract, introduction, methodology, results, discussion, conclusions, figure placeholder for angular entropy plot, references, and acknowledgments. Ensured compliance with RNAAS style and formatting guidelines.
+Time Spent: 2.5 hours
+
+Task: Integration of Simulation Background
+Description: Incorporated NASA/Hubble Space Telescope predictions of the MW–M31 merger, including expected collision timeline, tidal effects, and relevance to angular entropy diagnostic. Provided context for physical interpretation of outer and inner halo dynamics.
+Time Spent: 0.5 hours
+
+Task: Content Expansion & Word Limit Maximization
+Description: Enhanced draft to fully utilize journal word limit (~1,500 words), added detailed discussion of results, methodology nuances, implications for halo relaxation, and future analysis possibilities. Emphasized novelty and assumption-free nature of angular entropy.
+Time Spent: 0.75 hours
+
+3. Key Outputs
+-----------------
+1. Detailed interpretive analysis (~1,200 words) of MW–M31 merger angular entropy evolution.
+2. Publication-ready Results/Interpretation subsection in professional, passive-voice style.
+3. Fully structured LaTeX manuscript ready for RNAAS submission.
+4. Integration of simulation-based background contextualizing the MW–M31 merger.
+5. Methodology documentation including radial shell selection, angular binning, mass-weighted entropy calculation, and shot-noise handling.
+6. Placeholder for the main figure: angular entropy vs. snapshot/radius plot.
+
+4. Quantitative Summary of Work
+-----------------
+- Total time spent: ~8.5 hours
+- Total words generated: ~3,500–3,600 words (interpretation, draft, LaTeX content)
+- Figures prepared: 1 (angular entropy vs. time-radius)
+- References cited: 5 primary sources + NASA/Hubble simulation background
+
+Key Milestones Achieved:
+1. Journal selection and formatting analysis completed.
+2. Detailed results interpretation written and formalized.
+3. LaTeX manuscript produced and ready for submission.
+4. Full methodological and simulation context incorporated.
+5. Word limit fully utilized with detailed scientific discussion.
+
+5. Notes & Next Steps
+-----------------
+- Verify final figure labeling, axis scaling, and color mapping.
+- Consider quantitative metrics for inner vs. outer halo entropy to strengthen discussion.
+- Internal review for clarity, formatting, and scientific accuracy prior to submission.
+- Explore possible cross-reference with inertia-tensor evolution for future work.
 
