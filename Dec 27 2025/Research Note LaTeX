@@ -1,0 +1,96 @@
+\documentclass{article}
+
+% -------------------------------------------------
+% Packages
+% -------------------------------------------------
+\usepackage{graphicx}   % For figures
+\usepackage{natbib}     % For author-year citations
+\usepackage{amsmath}    % For equations
+
+% -------------------------------------------------
+% Title information
+% -------------------------------------------------
+\title{Angular Information Entropy Evolution of the Milky Way--Andromeda Halo}
+\author{Abhinav Vatsa}
+\date{} % Suppress date
+
+% -------------------------------------------------
+\begin{document}
+% -------------------------------------------------
+
+\maketitle
+
+\begin{abstract}
+The Milky Way (MW) and Andromeda (M31) galaxies are predicted to undergo a major merger in approximately four billion years. Using a sequence of collisionless $N$-body simulations of this interaction, we compute the temporal evolution of the \textit{angular information entropy} of the combined MW--M31 halo. This statistic quantifies the degree of angular isotropy within logarithmically spaced radial shells and provides a diagnostic complementary to conventional halo shape analyses. We find that early-time angular distributions exhibit pronounced anisotropy associated with the progenitor halos, while transient reductions in entropy coincide with close passages and strong tidal encounters. Angular mixing proceeds preferentially from large radii inward, and at late times the system approaches near-maximal entropy, signaling substantial coarse-grained angular isotropization. This diagnostic robustly traces merger-driven tidal features and relaxation processes without imposing assumptions on halo geometry or mass distribution.
+\end{abstract}
+
+% -------------------------------------------------
+\section{Introduction}
+% -------------------------------------------------
+
+The future collision between the Milky Way and Andromeda galaxies has been extensively investigated through proper-motion measurements obtained with the Hubble Space Telescope \citep{vanderMarel2012, Sohn2012, Besla2012}. These observations indicate that M31 is on an approximately radial orbit toward the MW, with the first pericentric passage expected to occur in roughly $\sim4$ Gyr. Subsequent dynamical evolution is predicted to culminate in the formation of a single elliptical remnant over the ensuing several billion years.
+
+Galaxy mergers play a fundamental role in shaping galactic structure, driving tidal distortions, redistributing angular momentum, and generating long-lived stellar and dark-matter streams \citep{Hopkins2009, BullockJohnston2005}. Traditionally, the evolution of merger remnants has been quantified using inertia-tensor--based shape diagnostics. While effective for characterizing global geometry, such approaches are insensitive to detailed angular substructure (particularly in the outer halo) and do not directly capture the degree of coarse-grained phase-space mixing.
+
+In this work, we introduce a mass-weighted \textit{angular information entropy} as a quantitative measure of angular anisotropy throughout the MW--M31 merger. Unlike geometric shape estimators, this method is agnostic to ellipsoidal symmetry and total mass normalization, instead providing a direct measure of information loss associated with angular phase-space mixing during hierarchical assembly.
+
+% -------------------------------------------------
+\section{Methodology}
+% -------------------------------------------------
+
+We analyze simulations of the MW--M31 merger constructed from collisionless $N$-body realizations of each halo. At every simulation snapshot, particles representing the dark-matter and stellar components of both galaxies are combined, and the MW center of mass is computed iteratively to remove bulk translational motion while preserving merger-induced asymmetries.
+
+Angular entropy, $S$, is evaluated within logarithmically spaced radial shells spanning $r = 0.1$--$400$ kpc. Each shell is subdivided into $n_\theta = 12$ polar and $n_\phi = 24$ azimuthal bins. Particle positions $(x,y,z)$ are transformed into spherical coordinates $(r,\theta,\phi)$, and a mass-weighted angular histogram is constructed for each shell. The Shannon entropy of this distribution is normalized by the maximum possible entropy, $S_{\rm max} = \log(n_\theta n_\phi)$:
+
+\begin{equation}
+S_{\rm norm} = -\frac{1}{\log(n_\theta n_\phi)} \sum_i p_i \log p_i ,
+\end{equation}
+
+\noindent where $p_i$ denotes the mass fraction contained in angular bin $i$. Radial shells containing fewer than 50 particles are excluded to mitigate shot noise. This analysis is applied to all 802 simulation snapshots, yielding a time-resolved, radial characterization of angular phase-space structure across the merging halo.
+
+% -------------------------------------------------
+\section{Results}
+% -------------------------------------------------
+
+The evolution of the normalized angular entropy is shown in Figure~\ref{fig:entropy}. At early times, entropy values remain systematically below unity, indicating the persistence of coherent angular structures inherited from the progenitor halos. Lower entropy at large radii reflects anisotropic infall patterns and tidal distortions, whereas the inner halo exhibits comparatively higher entropy consistent with shorter dynamical timescales and more efficient phase mixing.
+
+Pronounced, V-shaped minima in the entropy evolution coincide with major dynamical events, including close passages and episodes of strong tidal interaction. These minima arise from the formation of coherent tidal streams and merger-induced wakes, which transiently concentrate mass into restricted angular regions and reduce entropy. The presence of these features demonstrates that angular violent relaxation proceeds non-monotonically, involving alternating phases of ordering and disordering.
+
+A key feature of the entropy evolution is its radial dependence. Disturbances first manifest in the outer halo and subsequently propagate inward, consistent with the weaker binding and longer orbital periods at large radii. This outside-in progression underscores the radius-dependent nature of angular mixing and highlights the longevity of coherent tidal features in halo outskirts.
+
+At late times, entropy approaches unity across all well-sampled radii, indicating near-complete angular isotropization. Residual anisotropy persists longer in the outer halo, reflecting slower phase-mixing timescales. Notably, angular entropy saturates before full density and shape relaxation is achieved, illustrating the sensitivity of this diagnostic to subtle merger-driven processes not captured by inertia-tensor--based analyses.
+
+% -------------------------------------------------
+\section{Discussion}
+% -------------------------------------------------
+
+Angular information entropy provides a complementary perspective on halo relaxation by quantifying phase-space information loss rather than geometric deformation. This enables the identification of coherent tidal features and merger-induced angular ordering that may remain undetected in traditional shape analyses. The survival of low-entropy structures at large radii offers insight into the persistence of tidal debris, while the eventual convergence toward maximal entropy reflects the efficiency of angular mixing in erasing directional memory.
+
+The framework developed here is readily applicable to other galaxy mergers and to cosmological simulations. By combining mass weighting, angular binning, and radial shell decomposition, this approach offers a robust, assumption-free diagnostic for studying halo relaxation, tidal substructure, and the angular reorganization induced by hierarchical assembly.
+
+% -------------------------------------------------
+\section{Conclusions}
+% -------------------------------------------------
+
+The MW--M31 merger proceeds through a sequence of distinct angular phases: initial anisotropy inherited from the progenitor halos, transient angular ordering during tidal encounters, progressive outside-in angular mixing, and eventual isotropization. The angular information entropy diagnostic quantitatively captures each of these stages and provides a powerful tool for studying merger-driven relaxation in galactic halos. By complementing traditional shape analyses, this method enables detailed tracking of tidal features and angular phase-space evolution throughout major merger events.
+
+% -------------------------------------------------
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{angular_entropy_halo_evolution.png}
+\caption{Time--radius evolution of normalized angular entropy in the MW--M31 merger simulation. Each snapshot corresponds to a recombined MW--M31 particle distribution recentered on the MW center of mass. Lower values indicate coherent angular structures such as tidal streams and merger wakes, while higher values approach isotropy. Radial shells with fewer than 50 particles are masked. V-shaped minima correspond to close passages and strong tidal interactions.}
+\label{fig:entropy}
+\end{figure}
+
+% -------------------------------------------------
+\section*{Acknowledgments}
+% -------------------------------------------------
+
+This research utilized simulation data inspired by NASA Hubble Space Telescope predictions of the MW--M31 merger \citep{vanderMarel2012, Sohn2012}. The author acknowledges support from the University of Arizona Department of Astronomy.
+
+% -------------------------------------------------
+\bibliographystyle{apalike}
+\bibliography{Biblio}
+% -------------------------------------------------
+
+\end{document}
