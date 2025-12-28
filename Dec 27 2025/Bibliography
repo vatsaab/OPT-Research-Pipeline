@@ -1,0 +1,44 @@
+@article{vanderMarel2012,
+  author  = {van der Marel, R.~P. and Fardal, M.~A. and Besla, G. and Beaton, R.~L. and Sohn, S.~T. and Anderson, J. and Brown, T.~M. and Guhathakurta, P.},
+  title   = {The M31 Velocity Vector. III. Future Milky Way-M31-M33 Orbital Evolution, Merging, and Fate of the Sun},
+  journal = {Astrophysical Journal},
+  year    = {2012},
+  volume  = {753},
+  pages   = {8}
+}
+
+@article{Sohn2012,
+  author  = {Sohn, S.~T. and Anderson, J. and van der Marel, R.~P.},
+  title   = {The Proper Motion of M31: Space Motion and Orbit of the Andromeda Galaxy},
+  journal = {Astrophysical Journal},
+  year    = {2012},
+  volume  = {753},
+  pages   = {7}
+}
+
+@article{Besla2012,
+  author  = {Besla, G. and Kallivayalil, N. and Hernquist, L. and van der Marel, R.~P. and Cox, T.~J. and Kere{\v s}, D.},
+  title   = {The Role of Dwarf Galaxy Mergers in the Formation of the Magellanic Stream},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2012},
+  volume  = {421},
+  pages   = {2109}
+}
+
+@article{Hopkins2009,
+  author  = {Hopkins, P.~F. and Cox, T.~J. and Younger, J.~D. and Hernquist, L.},
+  title   = {How do Disks Survive Mergers?},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  year    = {2009},
+  volume  = {397},
+  pages   = {802}
+}
+
+@article{BullockJohnston2005,
+  author  = {Bullock, J.~S. and Johnston, K.~V.},
+  title   = {Tracing Galaxy Formation with Stellar Halos. I. Methods},
+  journal = {Astrophysical Journal},
+  year    = {2005},
+  volume  = {635},
+  pages   = {931}
+}
