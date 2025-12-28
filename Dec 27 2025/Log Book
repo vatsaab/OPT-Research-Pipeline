@@ -1,1 +1,21 @@
+Date: 2025-12-27
+Hours worked today: 9
+
+Activity Summary:
+- Completed the second draft of the research note on the application of Shannon entropy to assess angular isotropy in the Milky Way–Andromeda halo.
+- Uploaded the draft to today's folder in the repository.
+- Undertook a detailed rewrite of the manuscript to enhance clarity, coherence, and suitability for publication:
+    - Refined the Introduction to clearly motivate the novel application of Shannon entropy without presenting it as a new algorithm.
+    - Reworked the Methods section to explicitly define angular binning, probability calculations, normalization, and the reference isotropic distribution.
+    - Ensured that the figure effectively illustrates entropy trends and is fully interpretable on its own.
+    - Added explanatory statements to preempt potential reviewer questions regarding reproducibility and sensitivity to binning.
+- Verified adherence to journal research note guidelines, including word count (~1500 words), figure limit (one figure), and concise methodology description.
+- Confirmed that the manuscript communicates all novel aspects of the analysis while remaining reproducible without submission of code.
+- Documented assumptions and robustness checks to support the presented results.
+
+Notes / Next Steps:
+- Await internal feedback on Methods clarity and figure interpretation.
+- Prepare for final polishing prior to submission, including minor adjustments to binning, entropy calculation details, and figure labeling.
+- Maintain repository organization to track versions and ensure transparency.
+
 
