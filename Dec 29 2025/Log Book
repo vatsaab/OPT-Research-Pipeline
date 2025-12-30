@@ -1,1 +1,68 @@
+PROJECT: Angular Information Entropy Evolution of the MW–M31 Halo
+RESEARCHER: Abhinav Vatsa
+TOTAL TIME SPENT: 9 hours (including coding, debugging, computation, and analysis)
 
+OBJECTIVE:
+The objective of today’s work was to strengthen the angular information entropy methodology used to characterize anisotropy in the Milky Way–Andromeda halo merger. Specifically, the goal was to address two major methodological weaknesses that would likely be raised during peer review: (1) finite-particle (shot-noise) bias in Shannon entropy measurements, and (2) artificial angular anisotropy introduced by centering the system on the Milky Way alone while including M31 particles.
+
+The broader aim was to elevate the entropy-based diagnostic from an exploratory visualization tool to a statistically calibrated and physically defensible metric.
+
+METHODOLOGY IMPLEMENTED:
+
+Shot-noise calibration via isotropic Monte Carlo realizations
+
+Shannon entropy is known to be systematically biased downward for finite sample sizes, even for perfectly isotropic distributions. To correct for this, I implemented a Monte Carlo calibration scheme. For each snapshot and each radial shell containing N particles, I generated isotropic angular distributions with the same particle count and mass weighting. Using the same angular binning as the physical data, I computed the angular entropy for each mock realization. This was repeated 100 times per shell to estimate the mean isotropic entropy ⟨S_iso(N)⟩ and its standard deviation σ_iso(N).
+
+The measured entropy was then converted into a z-score–like quantity:
+
+Z = (S_measured − ⟨S_iso⟩) / σ_iso
+
+This reframes the entropy as a statistical deviation from an isotropic null hypothesis, rather than as a raw information measure.
+
+Change of centering reference frame
+
+The analysis was modified to recenter particle positions on the total MW+M31 center of mass rather than the Milky Way alone. This was done to remove trivial dipole anisotropies associated with the MW–M31 separation vector and to ensure that the entropy metric probes internal angular structure rather than orbital geometry.
+
+IMPLEMENTATION DETAILS:
+
+The above corrections were integrated directly into the existing pipeline. The Monte Carlo calibration was performed inside the radial-shell loop for each snapshot, leading to a computational scaling proportional to (number of snapshots) × (number of radial bins) × (number of Monte Carlo realizations). The code executed successfully across all snapshots, but required approximately 15,000 seconds of wall-clock time.
+
+RESULTS:
+
+The resulting output was a 2D heatmap showing the z-score deviation of angular entropy as a function of radius and snapshot number. While the plot is technically correct under the implemented statistical framework, it is visually dominated by large regions of extreme negative values, sharp transitions, and patchy structure.
+
+REASONS FOR DISCARDING THIS RESULT:
+
+Computational infeasibility
+
+The Monte Carlo calibration renders the method computationally prohibitive. Even modest parameter changes (e.g., increasing angular resolution or Monte Carlo realizations) dramatically increase runtime. This makes convergence tests, robustness checks, and referee-requested modifications impractical. As a primary diagnostic, the method does not scale.
+
+Noise-dominated signal
+
+The entropy z-score map is dominated by statistical fluctuations rather than physically interpretable structure. In particular, outer halo regions show strong apparent anisotropy that is consistent with estimator variance rather than genuine dynamical features. The Monte Carlo variance itself is large and radius-dependent, causing the correction to amplify noise instead of suppressing it.
+
+Overcorrection of the original bias
+
+While the raw entropy estimator is biased at finite N, the applied correction overcompensates. Subtracting a noisy isotropic baseline and dividing by its variance transforms small, physically meaningless deviations into apparently “significant” features. The result is an estimator that is statistically fragile and visually misleading.
+
+Loss of physical interpretability
+
+The original (uncorrected) entropy had a clear qualitative interpretation: high entropy corresponds to angular isotropy, and low entropy corresponds to clumpiness or substructure. The calibrated z-score lacks a straightforward physical meaning. It is not clear what specific structures correspond to, for example, a −3σ deviation versus a −1σ deviation. As such, the diagnostic does not map cleanly onto known stages of the MW–M31 merger.
+
+FINAL ASSESSMENT:
+
+This work represents an overcorrection of the original methodology. While it addresses formal statistical objections, it does so at the expense of computational tractability, signal clarity, and physical insight. The resulting plot does not meaningfully advance understanding of halo mixing or relaxation and will not be used in the analysis or in any publication.
+
+NEXT STEPS:
+
+The Monte Carlo–calibrated entropy approach will be abandoned. Future analysis will revert to raw angular entropy as a qualitative, non-parametric tracer of angular structure, explicitly framed as exploratory. This will be supplemented with more physically interpretable diagnostics such as multipole moments, inertia tensor analysis, and direct visualization of phase-space structure.
+
+TIME ACCOUNTING:
+
+Conceptual design and methodological planning: 2 hours
+Code modification and implementation: 3 hours
+Debugging and performance evaluation: 1.5 hours
+Full computation runtime (passive): 4.2 hours
+Post-run analysis and interpretation: 1.5 hours
+
+TOTAL TIME INVESTED: 9 hours
