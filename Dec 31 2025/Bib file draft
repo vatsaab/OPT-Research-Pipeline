@@ -1,0 +1,135 @@
+
+@article{vanderMarel2012,
+  author = {van der Marel, Roeland P. et al.},
+  title = {The M31 Velocity Vector. III. Future Milky Way--M31--M33 Orbital Evolution},
+  journal = {The Astrophysical Journal},
+  volume = {753},
+  pages = {9},
+  year = {2012}
+}
+
+@article{Sohn2012,
+  author = {Sohn, Sangmo Tony et al.},
+  title = {The Proper Motion of the Andromeda Galaxy Based on Hubble Space Telescope Observations},
+  journal = {The Astrophysical Journal},
+  volume = {753},
+  pages = {7},
+  year = {2012}
+}
+
+@article{Besla2012,
+  author = {Besla, Gurtina et al.},
+  title = {The Role of M33 in the Dynamics and Fate of the Milky Way--M31 System},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  volume = {421},
+  pages = {2109-2138},
+  year = {2012}
+}
+
+@article{numpy,
+ title         = {Array programming with {NumPy}},
+ author        = {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
+                 van der Walt and Ralf Gommers and Pauli Virtanen and David
+                 Cournapeau and Eric Wieser and Julian Taylor and Sebastian
+                 Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
+                 and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
+                 Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
+                 R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
+                 G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
+                 Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
+                 Travis E. Oliphant},
+ year          = {2020},
+ month         = sep,
+ journal       = {Nature},
+ volume        = {585},
+ number        = {7825},
+ pages         = {357--362},
+ doi           = {10.1038/s41586-020-2649-2},
+ publisher     = {Springer Science and Business Media {LLC}},
+ url           = {https://doi.org/10.1038/s41586-020-2649-2}
+}
+
+@book{python,
+  author    = {Van Rossum, Guido and Drake, Fred L.},
+  title     = {Python 3 Reference Manual},
+  year      = {2009},
+  isbn      = {1441412697},
+  publisher = {CreateSpace},
+  address   = {Scotts Valley, CA}
+}
+
+@ARTICLE{software-citation-station-paper,
+       author = {{Wagg}, Tom and {Broekgaarden}, Floor S.},
+        title = "{Streamlining and standardizing software citations with The Software Citation Station}",
+      journal = {arXiv e-prints},
+     keywords = {Astrophysics - Instrumentation and Methods for Astrophysics, Computer Science - Digital Libraries},
+         year = 2024,
+        month = jun,
+          eid = {arXiv:2406.04405},
+        pages = {arXiv:2406.04405},
+archivePrefix = {arXiv},
+       eprint = {2406.04405},
+ primaryClass = {astro-ph.IM},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv240604405W},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@software{software-citation-station-zenodo,
+  author       = {Tom Wagg and
+                  Floor Broekgaarden and
+                  Phil Van-Lane and
+                  Kai Wu and
+                  Kayhan Gültekin},
+  title        = {TomWagg/software-citation-station: v1.4},
+  month        = nov,
+  year         = 2025,
+  publisher    = {Zenodo},
+  version      = {v1.4},
+  doi          = {10.5281/zenodo.17654855},
+  url          = {https://doi.org/10.5281/zenodo.17654855},
+  swhid        = {swh:1:dir:9a009430037c791424a572f542e9a5d5c1fb44ff
+                   ;origin=https://doi.org/10.5281/zenodo.13225526;vi
+                   sit=swh:1:snp:ef11f058d718d691f0661c9445c2251328cb
+                   ac95;anchor=swh:1:rel:84cde4e532032537b7f014c4467c
+                   102430a53fa2;path=TomWagg-software-citation-
+                   station-61a588a
+                  },
+}
+@Article{Hunter:2007,
+  Author    = {Hunter, J. D.},
+  Title     = {Matplotlib: A 2D graphics environment},
+  Journal   = {Computing in Science \& Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {90--95},
+  abstract  = {Matplotlib is a 2D graphics package used for Python for
+  application development, interactive scripting, and publication-quality
+  image generation across user interfaces and operating systems.},
+  publisher = {IEEE COMPUTER SOC},
+  doi       = {10.1109/MCSE.2007.55},
+  year      = 2007
+}
+@ARTICLE{2007CSE.....9c..21P,
+       author = {{Perez}, Fernando and {Granger}, Brian E.},
+        title = "{IPython: A System for Interactive Scientific Computing}",
+      journal = {Computing in Science and Engineering},
+         year = "2007",
+        month = "Jan",
+       volume = {9},
+       number = {3},
+        pages = {21-29},
+          doi = {10.1109/MCSE.2007.53},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2007CSE.....9c..21P},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@conference{kluyver2016jupyter,
+    title = {Jupyter Notebooks -- a publishing format for reproducible computational workflows},
+    author = {Thomas Kluyver and Benjamin Ragan-Kelley and Fernando P{\'e}rez and Brian Granger and Matthias Bussonnier and Jonathan Frederic and Kyle Kelley and Jessica Hamrick and Jason Grout and Sylvain Corlay and Paul Ivanov and Dami{\'a}n Avila and Safia Abdalla and Carol Willing},
+    booktitle = {Positioning and Power in Academic Publishing: Players, Agents and Agendas},
+    editor = {F. Loizides and B. Schmidt},
+    organization = {IOS Press},
+    pages = {87 - 90},
+    year = {2016}
+}
+
