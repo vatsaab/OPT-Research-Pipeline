@@ -1,0 +1,82 @@
+\documentclass[RNAAS,twocolumn]{aastex631}
+
+% Optional: adjust spacing between columns if needed
+\setlength{\columnsep}{1em}
+
+\begin{document}
+
+\title{MW--M31 Halo Shape Evolution: Inertia Tensor and Convex Hull Comparison}
+\author{Abhinav Vatsa}
+\affiliation{University of Arizona, Department of Astronomy & Steward Observatory, 933 N. Cherry Ave., Tucson, AZ 85721, USA}
+
+\begin{abstract}
+The evolution of the Milky Way--Andromeda (MW--M31) halo system is examined using two complementary measures: the mass-weighted inertia tensor and a geometric convex-hull approach. The analysis reveals a convex-hull volume contraction of $\sim$1.5\%, non-monotonic evolution of the Hull-to-Ellipsoid volume ratio peaking at $\sim$4.6~Gyr, and discrete, stepwise transitions in convex-hull axis ratios at $\sim$2.9 and $\sim$6.4~Gyr compared to the smooth evolution of inertia-tensor metrics. These results highlight the sensitivity of geometric measures to outer-shell particle rearrangements during tidal interactions and provide complementary diagnostics to traditional inertia-tensor analysis.
+\end{abstract}
+
+\keywords{galaxies: halos --- galaxies: interactions --- methods: numerical --- dark matter}
+
+\section{Introduction}
+The future collision between the Milky Way and Andromeda galaxies has been studied through precise proper-motion measurements \citep{vanderMarel2012, Sohn2012, Besla2012}. These observations indicate that M31 is on an approximately radial orbit toward the MW, with a first pericentric passage expected in roughly 4 Gyr, culminating in a single elliptical remnant over several billion years.
+
+The shape and structural evolution of dark matter halos provide a direct probe of merger history, tidal interactions, and local environment. Traditionally, halo morphology has been quantified using mass-weighted inertia tensors, which are dominated by the central mass concentration. A geometric convex-hull method complements this approach by capturing the outer halo boundary and is sensitive to rearrangements of low-density, outer-shell particles. Comparison of these two measures across all snapshots allows assessment of differences between core and outer-shell evolution in the MW--M31 system.
+
+\section{Methodology}
+
+\subsection{Simulation Data}
+The analysis uses a sequence of collisionless $N$-body simulations of the MW--M31 merger, derived from precise Hubble Space Telescope measurements of the proper motion of Andromeda \citep{vanderMarel2012, Sohn2012, Besla2012}. These simulations model the late-stage interaction between the Milky Way and Andromeda halos, including dark matter dynamics over several billion years. The dataset contains 802 snapshots, each providing positions and masses for all dark matter particles. The MW center of mass is computed iteratively at each snapshot to remove bulk translational motion while preserving merger-induced asymmetries.
+The simulation outputs snapshots at regular intervals of $\Delta t \approx 0.0143~\mathrm{Gyr}$.
+
+\subsection{Inertia Tensor and Convex Hull Metrics}
+For each snapshot, the mass-weighted inertia tensor is computed:
+\[
+I_{ij} = \sum_k m_k (r_k^2 \delta_{ij} - r_{k,i} r_{k,j}),
+\]
+where $m_k$ is the particle mass and $r_k$ its position relative to the halo center. Diagonalization yields eigenvalues $(\lambda_1 \ge \lambda_2 \ge \lambda_3)$, from which axis ratios are calculated:
+\[
+b/a = \sqrt{\lambda_2 / \lambda_1}, \quad c/a = \sqrt{\lambda_3 / \lambda_1}.
+\]
+
+The convex hull encloses all halo particles. Its geometric inertia tensor, computed from the hull vertices, yields analogous axis ratios independent of particle mass. The convex hull volume $V_{CH}$ is also calculated, and the volume ratio
+\[
+\mathcal{R} = \frac{V_{CH}}{V_E}, \quad V_E = \frac{4\pi}{3} a b c
+\]
+quantifies how well a simple ellipsoid approximates the halo's outer geometry.
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\textwidth]{halo_axis_ratio_comparison.png}
+\caption{Evolution of MW--M31 halo axis ratios. Solid lines: inertia-tensor ratios. Dashed lines: convex-hull ratios. Stepwise fluctuations in convex-hull ratios reflect outer-shell particle rearrangements, whereas inertia-tensor ratios evolve smoothly. Snapshots are taken at intervals of $\Delta t \approx 0.0143~\mathrm{Gyr}$.}
+\label{fig:axis_ratios}
+\end{figure*}
+\section{Results}
+
+\noindent Key findings include:
+\begin{itemize}
+    \item \textbf{Volume contraction:} Convex-hull volume decreases from $4.465\times10^{12}$ to $\sim4.405\times10^{12}$ near snapshot 720, indicating halo tightening, followed by a minor rebound.
+    \item \textbf{Hull-to-Ellipsoid ratio:} $\mathcal{R}$ rises from 0.137 to a peak of 0.162 at snapshot 325, then declines, suggesting maximal ellipsoidal correspondence mid-way through the merger.
+    \item \textbf{Axis ratio evolution:} Inertia-tensor ratios evolve smoothly, reflecting core sphericity growth. Convex-hull ratios display stepwise jumps in $c/a$ between 0.88 and 0.93 at snapshots 200 and 450, corresponding to outer-shell particle rearrangements.
+\end{itemize}
+
+
+
+\section{Discussion}
+The convex-hull method provides higher sensitivity to outer-shell dynamics than the inertia tensor. Stepwise changes in $c/a$ reveal discrete morphological shifts, whereas inertia-tensor $c/a$ traces smooth core evolution. The combination of volume contraction and peak $\mathcal{R}$ indicates that the outer halo initially follows a simple ellipsoidal shape but becomes distorted through tidal interactions. These results underscore the complementarity of convex-hull metrics for detecting rapid outer-boundary rearrangements.
+
+\section{Conclusions}
+\begin{enumerate}
+    \item Convex-hull volume contracts by approximately 1.5\% over the observed period.
+    \item The mass-weighted core becomes more spherical faster than the geometric outer shell.
+    \item Convex-hull axis ratios capture discrete morphological changes, providing complementary diagnostics to inertia-tensor metrics.
+\end{enumerate}
+
+\section*{Acknowledgments}
+This research utilized $N$-body simulation data derived from Hubble Space Telescope measurements of the MW--M31 system \citep{vanderMarel2012, Sohn2012, Besla2012}. Thanks are extended to the University of Arizona Department of Astronomy for support and for fostering an inspiring research environment. Special thanks to Dr. Gurtina Besla for providing the simulation snapshots as a part of University of Arizona's ASTR 400B coursework. 
+
+This work made use of the following software packages:  \texttt{Jupyter} \citep{2007CSE.....9c..21P,kluyver2016jupyter}, \texttt{matplotlib} \citep{Hunter:2007}, \texttt{numpy} \citep{numpy}, and \texttt{python} \citep{python}.
+
+Software citation information aggregated using \texttt{\href{https://www.tomwagg.com/software-citation-station/}{The Software Citation Station}} \citep{software-citation-station-paper,software-citation-station-zenodo}.
+
+\bibliographystyle{aasjournal}
+\bibliography{references}
+
+\end{document}
