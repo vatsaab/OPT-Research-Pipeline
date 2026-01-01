@@ -1,1 +1,101 @@
+Hours Worked: 12 hours
+Research Logbook Entry: MW–M31 Halo Shape Evolution
+Researcher: Abhinav Vatsa
+Date: 2025-12-31
 
+Project: RNAAS Manuscript on MW–M31 Halo Shape Evolution
+
+Objective:
+Finalize and prepare a Research Note for RNAAS on the evolution of the Milky Way–Andromeda (MW–M31) halo system, comparing mass-weighted inertia tensor metrics with convex-hull geometric metrics.
+
+Log of Activities:
+
+Abstract Draft and Snapshot Data Analysis
+
+Drafted abstract including number of snapshots and specific snapshot numbers.
+
+Decided to express events in physical time (Gyr) instead of snapshot indices.
+
+Noted convex-hull volume contraction (~1.5%) and differences between inertia-tensor vs convex-hull evolution.
+
+Author Information and Credentials
+
+Added academic credential under name: BS, University of Arizona, Astronomy.
+
+Formatted author and affiliation for RNAAS submission.
+
+Figure Placement and LaTeX Structure
+
+Evaluated figure placement; initially pushed figure to the end of the manuscript.
+
+Explored placement options and figure width adjustments for integration.
+
+Two-Column Manuscript Conversion
+
+Updated LaTeX document class to [RNAAS,twocolumn]{aastex631}.
+
+Adjusted figure width to \columnwidth for inline display.
+
+Verified abstract, sections, and equations displayed correctly in two-column format.
+
+Methodology Section Refinement
+
+Included details of MW–M31 N-body simulations.
+
+Added number of snapshots and simulation output interval (Δt ≈ 0.0143 Gyr).
+
+Included inertia tensor formulas and convex hull volume calculations.
+
+Results Section Revision
+
+Expressed results using physical time markers instead of snapshots:
+
+Volume contraction ~1.5%
+
+Hull-to-Ellipsoid ratio peak ~4.6 Gyr
+
+Stepwise axis ratio changes ~2.9 Gyr and ~6.4 Gyr
+
+Revised bullet points for clarity in two-column format.
+
+Discussion Section
+
+Highlighted complementarity of convex-hull and inertia-tensor metrics.
+
+Emphasized convex-hull sensitivity to outer-shell particle rearrangements.
+
+Conclusions Section
+
+Drafted three key conclusions regarding volume contraction, core sphericity, and axis ratio diagnostics.
+
+Acknowledgments and Software Citation
+
+Added acknowledgments for HST simulation data and University of Arizona support.
+
+Included software citations for matplotlib, numpy, python, and The Software Citation Station.
+
+Final Verification and Integration
+
+Ensured figure integration in the manuscript text, not at the end.
+
+Checked two-column formatting for abstract, sections, equations, figures, and references.
+
+Confirmed compliance with RNAAS style and word count limits.
+
+Final PDF ready for submission with professional formatting.
+
+Summary of Accomplishments:
+
+Refined abstract and converted snapshot-based metrics to physical time (Gyr).
+
+Added author credentials and formatted affiliations properly.
+
+Converted manuscript to two-column layout.
+
+Integrated figure inline with text using appropriate width.
+
+Verified methodology, results, discussion, and conclusions for clarity and RNAAS compliance.
+
+Added software citations and acknowledgments.
+
+Final manuscript ready for submission.
