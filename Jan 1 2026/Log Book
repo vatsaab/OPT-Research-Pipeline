@@ -1,1 +1,43 @@
+Date: January 1, 2026
+Researcher: Abhinav Vatsa
+Project: MW–M31 Halo Shape Evolution: Inertia Tensor and Convex Hull Comparison
 
+Hours Worked: 3.5 hours
+
+Log Book – Research Activities
+
+Reviewed existing RNAAS draft for MW–M31 halo note.
+
+Identified figure placement issue: axis ratio figure appeared after references and took a full page.
+
+Modified LaTeX to move figure immediately after Quickhull equation in Convex Hull section.
+
+Rewrote Methodology section:
+
+Clarified that inertia tensor eigenvalues are a proxy for halo shape, not exact ellipsoid axes.
+
+Described Convex Hull as a geometric measure of halo boundary, sensitive to outer-shell particles.
+
+Defined dimensionless structural index $R$ as relative measure of morphology rather than literal volume ratio.
+
+Added note on sensitivity to extreme particles explaining stepwise axis ratio changes.
+
+Removed Results section to streamline RNAAS note.
+
+Replaced Conclusions section with Implications section summarizing broader significance of metrics.
+
+Added one concluding sentence to Discussions section to wrap up analysis.
+
+Renamed Discussions section to “Halo Morphology Implications” for specificity.
+
+Added corresponding author information on bottom left of first page:
+
+\correspondingauthor{Abhinav Vatsa}
+\email{abhinavvatsa@arizona.edu}
+
+
+Verified LaTeX compiles correctly in two-column RNAAS layout with figure inline.
+
+Ensured all equations, notes, and section headers are correctly positioned and consistent.
+
+Outcome: Manuscript is technically accurate, visually coherent, methodology clearly explained, figure integrated, and ready for RNAAS submission.
